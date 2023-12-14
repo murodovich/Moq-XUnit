@@ -1,0 +1,6 @@
+@Moq_XUnit_HostAddress = http://localhost:5248
+
+GET {{Moq_XUnit_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
