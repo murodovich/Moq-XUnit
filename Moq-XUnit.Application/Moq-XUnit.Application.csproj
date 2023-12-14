@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Moq-XUnit.Domain\Moq-XUnit.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
