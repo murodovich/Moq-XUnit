@@ -1,34 +1,45 @@
 ﻿using Moq_XUnit.Domain.Dtos;
 using Moq_XUnit.Domain.Entities;
-
+using Moq_XUnit.Infrastructure.Repositories.UserRepositories;
 namespace Moq_XUnit.Application.UserServices
 {
     public class UserService : IUserService
     {
-        
-        public ValueTask<bool> UserCreateAsync(UserDto userDto)
+        private readonly IUserRepository _userRepository;
+
+        public UserService(IUserRepository userRepository)
         {
-            throw new NotImplementedException();
+            _userRepository = userRepository;
         }
 
-        public ValueTask<bool> UserDeleteAsync(int Id)
+        public async ValueTask<bool> UserCreateAsync(UserDto userDto)
         {
-            throw new NotImplementedException();
+            var result = await _userRepository.CreateAsync(userDto);
+            return result;
         }
 
-        public ValueTask<List<User>> UserGetAllAsync()
+        public async ValueTask<bool> UserDeleteAsync(int Id)
         {
-            throw new NotImplementedException();
+            var result = await _userRepository.DeleteAsync(Id);
+            return result;
         }
 
-        public ValueTask<User> UserGetByIdAsync(int Id)
+        public async ValueTask<IEnumerable<User>> UserGetAllAsync()
         {
-            throw new NotImplementedException();
+            var result = await _userRepository.GetAllAsync();
+            return result;
         }
 
-        public ValueTask<bool> UserUpdateAsync(int Id, UserDto userDto)
+        public async ValueTask<User> UserGetByIdAsync(int Id)
         {
-            throw new NotImplementedException();
+            var result = await (_userRepository.GetByIdAsync(Id));
+            return result;
+        }
+
+        public async ValueTask<bool> UserUpdateAsync(int Id, UserDto userDto)
+        {
+            var result = await _userRepository.UpdateAsync(Id, userDto);
+            return result;
         }
     }
 }
