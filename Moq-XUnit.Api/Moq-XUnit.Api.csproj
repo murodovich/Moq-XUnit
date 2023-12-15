@@ -17,10 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Moq-XUnit.Application\Moq-XUnit.Application.csproj" />
     <ProjectReference Include="..\Moq-XUnit.Infrastructure\Moq-XUnit.Infrastructure.csproj" />
   </ItemGroup>
