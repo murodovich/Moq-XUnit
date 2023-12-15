@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Moq-XUnit.Domain\Moq-XUnit.Domain.csproj" />
+    <ProjectReference Include="..\Moq-XUnit.Infrastructure\Moq-XUnit.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
